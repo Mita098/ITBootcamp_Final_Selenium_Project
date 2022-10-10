@@ -17,12 +17,14 @@ import org.testng.annotations.BeforeMethod;
 
 import pages.LoginPage;
 import pages.NavPage;
+import pages.SingUpPage;
 
 public class BasicTest {
 	protected WebDriver driver;
 	protected String baseUrl = "https://vue-demo.daniel-avellaneda.com";
 	protected LoginPage loginPage;
 	protected NavPage navPage;
+	protected SingUpPage singUpPage;
 
 	@BeforeClass
 	public void setup() {
@@ -32,6 +34,7 @@ public class BasicTest {
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		loginPage = new LoginPage(driver);
 		navPage = new NavPage(driver);
+		singUpPage = new SingUpPage(driver);
 		
 	}
 
