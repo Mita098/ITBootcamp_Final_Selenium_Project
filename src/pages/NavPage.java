@@ -1,9 +1,9 @@
 package pages;
 
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 public class NavPage {
 	private WebDriver driver;
 
@@ -56,4 +56,8 @@ public class NavPage {
 	public WebElement getUALanguageButton() {
 		return driver.findElement(By.xpath("//*[contains(@role, 'menu')]/div/div[5]"));
 	}
+	public String getUrl() {
+		return driver.getCurrentUrl();
+	}
+
 }

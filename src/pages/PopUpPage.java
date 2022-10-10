@@ -18,12 +18,10 @@ public class PopUpPage {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 }
 	public WebElement getPopUpMassageTextElement() {
-		return driver.findElement(By.className("v-snack__content"))
-				.findElement(By.tagName("ul"))
-				.findElement(By.tagName("li"));
+		return driver.findElement(By.xpath("//*[contains(@class, 'background ')]//li"));
 	}
-	public void waitForEditItemDialogToApper() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("snack__wrapper")));
+	public void waitDialogToApper() {
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@class, 'background ')]//li")));
 	}
 	public WebElement getCloseButton() {
 		return driver.findElement(By.xpath("//*[text()='Close']"));

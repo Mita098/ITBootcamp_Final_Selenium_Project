@@ -21,7 +21,7 @@ import pages.NavPage;
 import pages.PopUpPage;
 import pages.SingUpPage;
 
-public class BasicTest {
+public abstract class BasicTest {
 	protected WebDriver driver;
 	protected String baseUrl = "https://vue-demo.daniel-avellaneda.com";
 	protected LoginPage loginPage;
@@ -36,6 +36,7 @@ public class BasicTest {
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
+		driver.manage().window().maximize();
 		loginPage = new LoginPage(driver);
 		navPage = new NavPage(driver);
 		singUpPage = new SingUpPage(driver);
