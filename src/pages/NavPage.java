@@ -30,7 +30,7 @@ public class NavPage {
 		return driver.findElement(By.id("list-item-120"));
 	}
 	public WebElement getSingUpButton() {
-		return driver.findElement(By.className("btnLogin"));
+		return driver.findElement(By.xpath("//*[text()=' Sign Up ']"));
 	}
 	public WebElement getLoginButton() {
 		return driver.findElement(By.xpath("//*[contains(@class, 'btnLogin')]"));
