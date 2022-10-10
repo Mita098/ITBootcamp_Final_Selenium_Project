@@ -18,6 +18,7 @@ import org.testng.annotations.BeforeMethod;
 import pages.CitiesPage;
 import pages.LoginPage;
 import pages.NavPage;
+import pages.PopUpPage;
 import pages.SingUpPage;
 
 public class BasicTest {
@@ -27,6 +28,7 @@ public class BasicTest {
 	protected NavPage navPage;
 	protected SingUpPage singUpPage;
 	protected CitiesPage citiesPage;
+	protected PopUpPage popUpPage;
 
 	@BeforeClass
 	public void setup() {
@@ -38,6 +40,7 @@ public class BasicTest {
 		navPage = new NavPage(driver);
 		singUpPage = new SingUpPage(driver);
 		citiesPage = new CitiesPage(driver);
+		popUpPage = new PopUpPage(driver);
 	}
 
 	@BeforeMethod
