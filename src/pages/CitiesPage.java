@@ -18,13 +18,16 @@ public class CitiesPage {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 }
 	public WebElement getNewItemButton() {
-		return driver.findElement(By.className("btnNewItem "));
+		return driver.findElement(By.xpath("//form//button"));
 	}
 	public WebElement getSearchInput() {
 		return driver.findElement(By.id("search"));
 	}
+	public WebElement getAddCitiesFieldInput() {
+		return driver.findElement(By.id("name"));
+	}
 	public void waitForEditItemDialogToApper() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("dlgNewEditItem ")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@class, 'dialog__content--active')]/div/div")));
 		
 	}
 	public void waitForDeleteItemDialogToApper() {

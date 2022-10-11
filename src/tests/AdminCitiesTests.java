@@ -14,4 +14,12 @@ public class AdminCitiesTests extends BasicTest {
 		navPage.getCitiesLink().click();
 		Assert.assertTrue(navPage.getUrl().contains("/admin/cities"), "ERROR: Wrong url is displayed. Should contain '/admin/cities'");
 	}
+	@Test(priority = 20)
+	public void checksInputTypesForCreateOrEditNewCity() {
+		navPage.getAdminButton().click();
+		navPage.getCitiesLink().click();
+		citiesPage.getNewItemButton().click();
+		citiesPage.waitForEditItemDialogToApper();
+		Assert.assertEquals(citiesPage.getAddCitiesFieldInput().getAttribute("type"), "text", "ERROR: Name field should contain attribute type='text'");
+	}
 }
