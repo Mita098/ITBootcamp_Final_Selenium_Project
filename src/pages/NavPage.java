@@ -24,10 +24,10 @@ public class NavPage {
 		return driver.findElement(By.className("btnAdmin"));
 	}
 	public WebElement getCitiesLink() {
-		return driver.findElement(By.id("list-item-117"));
+		return driver.findElement(By.className("btnAdminCities"));
 	}
 	public WebElement getUsersLink() {
-		return driver.findElement(By.id("list-item-120"));
+		return driver.findElement(By.className("btnAdminUsers"));
 	}
 	public WebElement getSingUpButton() {
 		return driver.findElement(By.xpath("//*[text()=' Sign Up ']"));
