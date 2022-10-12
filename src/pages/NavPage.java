@@ -59,5 +59,7 @@ public class NavPage {
 	public String getUrl() {
 		return driver.getCurrentUrl();
 	}
-
+	public WebElement getHomeHeader() {
+		return driver.findElement(By.tagName("h1"));
+	}
 }
