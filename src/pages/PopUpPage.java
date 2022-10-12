@@ -20,14 +20,21 @@ public class PopUpPage {
 	public WebElement getPopUpMassageTextElement() {
 		return driver.findElement(By.xpath("//*[contains(@class, 'background ')]//li"));
 	}
+	public WebElement getPopUpCitiesMassageTextElement() {
+		return driver.findElement(By.xpath("//div[contains(@class, 'success')]//div[@role='status']"));
+	}
+	public WebElement getPopUpCitiesDeleteMassageTextElement() {
+		return driver.findElement(By.xpath("//div[contains(@class, 'success')]//div[@role='status']"));
+	}
 	public void waitDialogToApper() {
 		wait.until(ExpectedConditions.attributeContains(By.xpath("//*[contains(@class, 'background ')]"), "class", "v-snack--active"));
 	}
-	public WebElement getCloseButton() {
-		return driver.findElement(By.xpath("//*[text()='Close']"));
+	public void waitForCitiesDialogToApper() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'success')]//div[@role='status']")));
 	}
+
 	public void waitForVerifyYourAccountDialogToApper() {
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[text()=' IMPORTANT: Verify your account ']")));
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("dlgVerifyAccount")));
 
 
 	}
@@ -35,6 +42,6 @@ public class PopUpPage {
 		return driver.findElement(By.className("dlgVerifyAccount"));
 	}
 	public WebElement getVerifyYourAccountDialogCloseButton() {
-		return driver.findElement(By.xpath("//*[text()='Close']"));
+		return driver.findElement(By.xpath("//*[contains(@class, 'v-card__actions')]/button"));
 	}
 }

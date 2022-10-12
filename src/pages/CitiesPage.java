@@ -31,7 +31,7 @@ public class CitiesPage {
 		
 	}
 	public void waitForDeleteItemDialogToApper() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()=' Cancel ']")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("v-dialog--active")));
 		
 	}
 	public WebElement getSaveButton() {
@@ -50,5 +50,8 @@ public class CitiesPage {
 	public WebElement getDeleteByRowButton(int row) {
 		return driver.findElement(By.xpath("//tbody/tr[" + row + "]"))
 					 .findElement(By.id("delete"));
+	}
+	public WebElement getDeleteFromDialogButton() {
+		return driver.findElement(By.xpath("//*[contains(@class, 'v-dialog--active')]//button[2]"));
 	}
 }
