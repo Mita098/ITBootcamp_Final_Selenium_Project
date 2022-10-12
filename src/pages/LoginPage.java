@@ -29,4 +29,5 @@ public class LoginPage {
 	public void waitLoginToFinish() {
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("btnProfile")));
 	}
+
 }
